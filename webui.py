@@ -5,7 +5,6 @@ import time
 import win32com.client
 from api.chat import prompt
 
-
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 r = sr.Recognizer()
 engine = pyttsx3.init()
@@ -21,7 +20,6 @@ def get_speech_input():
             recognized_text = r.recognize_google(audio)
             recognized_text = recognized_text.lower()
             st.info("Recognized...")
-            # print("You said:", recognized_text)
             return recognized_text
         except sr.UnknownValueError:
             print("Unable to recognize speech")
@@ -35,12 +33,8 @@ def speak_output(text):
 
 
 st.title('LLM Chatbot')
-
-
 import streamlit as st
 
-# if st.button('Speak'):
-#         my_text = st.text_input('Input Field', f'{get_speech_input()}')
 
 if st.button("Generate"):
     my_text = get_speech_input()
@@ -54,15 +48,3 @@ if st.button("Generate"):
     else:
         title = st.text_input('Chatbot Response', "Please First make a prompt")
 
-
-    
-
-
-
-
-
-    
-# else:
-#     st.write('Goodbye')
-
-# st.write('Sentiment:', txt)
