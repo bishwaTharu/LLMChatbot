@@ -33,7 +33,6 @@ def speak_output(text):
 
 
 st.title('LLM Chatbot')
-import streamlit as st
 
 
 if st.button("Generate"):
