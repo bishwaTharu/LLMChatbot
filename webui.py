@@ -3,7 +3,7 @@ import speech_recognition as sr
 import pyttsx3
 import time
 import win32com.client
-from api.chat import prompt
+from client.chat import prompt
 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 r = sr.Recognizer()
