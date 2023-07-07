@@ -1,16 +1,10 @@
 import speech_recognition as sr
 import pyttsx3
-from api.chat import prompt
-# Initialize the recognizer
+from client.chat import prompt
 import win32com.client
-  
-# Calling the Dispatch method of the module which 
-# interact with Microsoft Speech SDK to speak
-# the given input from the keyboard
   
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 r = sr.Recognizer()
-# engine = pyttsx3.init()
 
 def get_speech_input():
     # Use the microphone as the source for input
@@ -20,7 +14,6 @@ def get_speech_input():
 
         print("Listening...")
 
-        # Listen for the user's input
         audio = r.listen(source)
 
         print("Recognizing...")
