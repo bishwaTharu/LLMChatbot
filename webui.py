@@ -6,12 +6,13 @@ from utils.stt import Speaker
 
 
 st.title('LLM Chatbot')
-if st.button("Generate"):
+if st.button("Chat"):
     my_text = get_speech_input()
     if my_text:
-        st.text_input('Input Field', f'{my_text}')
+        st.text_input('Prompt', f'{my_text}')
         chatbot_response = prompt(my_text)
-        st.text_input('Chatbot Response', chatbot_response)
+        # st.text_input('Chatbot Response', chatbot_response)
+        st.text_area('Chatbot Response', chatbot_response)
         # st.write(title)
         Speaker(chatbot_response)
 
