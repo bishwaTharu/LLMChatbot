@@ -3,7 +3,7 @@ import speech_recognition as sr
 import streamlit as st
 r = sr.Recognizer()
 
-def get_speech_input():
+def Hear():
     # Use the microphone as the source for input
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source, duration=0.2)
