@@ -4,7 +4,6 @@ from client.chat import prompt
 from utils.tts import Hear
 from utils.stt import Speaker
 
-# CSS styling for the title
 st.markdown(
     """
     <style>
