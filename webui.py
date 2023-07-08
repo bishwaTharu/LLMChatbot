@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 from client.chat import prompt
-from utils.tts import get_speech_input
+from utils.tts import Hear
 from utils.stt import Speaker
 
 # CSS styling for the title
@@ -23,7 +23,7 @@ st.markdown(
 st.markdown('<p class="title">LLM Chatbot</p>', unsafe_allow_html=True)
 
 if st.button("Ask Me Anything",type='primary'):
-    my_text = get_speech_input()
+    my_text = Hear()
     if my_text:
         st.text_input('Prompt', f'{my_text}')
         chatbot_response = prompt(my_text)
